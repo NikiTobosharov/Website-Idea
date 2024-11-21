@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin-inline: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 0px;
+  align-items: center;
+}
+
+.navbar .left {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .right a:link,
+.navbar .right a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+
+.navbar .right img {
+  width: 24px;
+  height: 24px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 400px 400px 1fr;
+  grid-template-areas:
+    "hike hike photographer"
+    "hike hike space"
+    "ai-chatbot cuber space"
+    "animals schedule schedule"
+    "animals schedule schedule"
+    "fish-game fish-game fitness"
+    "fish-game fish-game fitness";
+  gap: 16px;
+  margin-inline: auto;
+}
+
+#hike {
+  grid-area: hike;
+}
+
+#photographer {
+  grid-area: photographer;
+}
+
+#cuber {
+  grid-area: cuber;
+}
+
+#ai-chatbot {
+  grid-area: ai-chatbot;
+}
+
+#space {
+  grid-area: space;
+}
+
+#animals {
+  grid-area: animals;
+}
+
+#schedule {
+  grid-area: schedule;
+}
+
+#fish-game {
+  grid-area: fish-game;
+}
+
+#fitness {
+  grid-area: fitness;
+}
+
+.project {
+  position: relative;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project .overlay {
+  opacity: 0;
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.project:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.navbar .bar {
+  background-color: #000;
+  height: 4px;
+  width: 36px;
+  border-radius: 10px;
+}
+
+.navbar .menu {
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 36px;
+}
+
+@media screen and (max-width: 1100px) {
+  .project-grid {
+    grid-template-areas:
+      "hike hike"
+      "photographer space"
+      "ai-chatbot cuber"
+      "schedule schedule"
+      "animals fish-game"
+      "fitness fitness";
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .navbar .right {
+    display: none;
+  }
+
+  .project-grid {
+    grid-template-areas:
+      "hike hike"
+      "photographer photographer"
+      "space space"
+      "ai-chatbot cuber"
+      "schedule schedule"
+      "animals animals"
+      "fish-game fish-game"
+      "fitness fitness";
+  }
+  .project .overlay {
+    font-size: 24px;
+  }
+
+  .navbar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+}
